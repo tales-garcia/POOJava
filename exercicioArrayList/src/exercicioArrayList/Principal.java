@@ -1,6 +1,7 @@
 package exercicioArrayList;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 
 public class Principal {
@@ -61,6 +62,19 @@ public class Principal {
 		
 		System.out.println("\nEXERCICIO 8:\n");
 		System.out.println("Lista " + lista3 + " com apenas palavras que comecam com C: " + filtrarPorLetra(lista3, "c"));
+		
+		System.out.println("\nEXERCICIO 9:\n");
+		System.out.println("Media da lista " + lista1 + ": " + media(lista1));
+		
+		System.out.println("\nEXERCICIO 10:\n");
+		ArrayList<String> lista6 = new ArrayList<String>();
+		lista6.add("a");
+		lista6.add("b");
+		lista6.add("c");
+		lista6.add("d");
+		lista6.add("e");
+		System.out.println("Lista original: " + lista6);
+		System.out.println("Invertida: " + reverter(lista6));
 	}
 
 	public static int contagemElementosUnicos(ArrayList<Integer> lista) {
@@ -111,6 +125,18 @@ public class Principal {
 				clone.add(string);
 			}
 		}
+		return clone;
+	}
+	public static double media(ArrayList<Integer> lista) {
+		int soma = 0;
+		for (int i : lista) {
+			soma += i;
+		}
+		return soma/lista.size();
+	}
+	public static ArrayList<String> reverter(ArrayList<String> lista) {
+		ArrayList<String> clone = new ArrayList<String>(lista);
+		Collections.reverse(clone);
 		return clone;
 	}
 }
